@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ZivvuTasks
 
-## Getting Started
+> Organize sua rotina com simplicidade.
 
-First, run the development server:
+**ZivvuTasks** é um gerenciador de tarefas no estilo **Kanban**: você organiza suas tarefas em colunas por status, arrasta os cartões entre as colunas e tem tudo salvo automaticamente no próprio navegador — sem login, sem servidor, sem banco de dados.
+
+---
+
+## ✨ Funcionalidades
+
+- 📋 **Quadro com colunas por status** — começa com 5 colunas (A Fazer, Em Progresso, Em Revisão, Concluído, Cancelado).
+- ➕ **Criação de colunas** — adicione novas etapas no seu fluxo, com limite de **8 colunas**.
+- ✏️ **Colunas renomeáveis** — clique no nome de qualquer coluna para editar.
+- 📝 **Criação de tarefas** — via modal com título, descrição e coluna de destino.
+- 🖱️ **Arrastar e soltar (drag and drop)** — mova cartões entre colunas (com um seletor de atalho como alternativa no toque).
+- 💾 **Persistência automática** — colunas e tarefas ficam salvas no `localStorage` do navegador.
+- 📖 **Página de tutorial** — explica o passo a passo de uso da plataforma.
+
+---
+
+## 🛠️ Tecnologias
+
+- [Next.js 16](https://nextjs.org) (App Router)
+- [React 19](https://react.dev)
+- [TypeScript](https://www.typescriptlang.org)
+- [Tailwind CSS v4](https://tailwindcss.com)
+- [lucide-react](https://lucide.dev) e [react-icons](https://react-icons.github.io/react-icons) (ícones)
+- Fontes [Manrope](https://fonts.google.com/specimen/Manrope) e [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) via `next/font`
+
+---
+
+## 🚀 Como rodar
 
 ```bash
+# instalar as dependências
+npm install
+
+# rodar em modo de desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) no navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Outros comandos:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build   # gera a build de produção
+npm run start   # roda a build de produção
+npm run lint    # verifica o código com ESLint
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Estrutura
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+app/
+├── components/
+│   ├── header.tsx     # cabeçalho com navegação e underline deslizante
+│   └── footer.tsx     # rodapé
+├── board/
+│   └── page.tsx       # o quadro Kanban (colunas, tarefas, drag and drop, localStorage)
+├── tutorial/
+│   └── page.tsx       # página de tutorial de uso
+├── layout.tsx         # layout raiz (fontes, header e footer globais)
+├── page.tsx           # página inicial (apresentação da plataforma)
+└── globals.css        # estilos globais, tema e animações do modal
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 💾 Como os dados são salvos
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+A ZivvuTasks **não usa banco de dados**. Tudo é guardado no `localStorage` do navegador, sob as chaves:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `zivvu_colunas` — a lista de colunas
+- `zivvu_tasks` — a lista de tarefas
+
+Por isso, os dados são **por dispositivo e por navegador**: o quadro do celular não é o mesmo do computador, e limpar os dados do navegador apaga o quadro.
+
+---
+
+## 📌 Rotas
+
+| Rota        | Página                                   |
+|-------------|------------------------------------------|
+| `/`         | Apresentação da plataforma               |
+| `/board`    | Quadro de tarefas (Kanban)               |
+| `/tutorial` | Tutorial de uso                          |
+
+---
+
+Feito com 💙 por **Daniel Camillo Silva** — projeto **ZivvuTasks**.
