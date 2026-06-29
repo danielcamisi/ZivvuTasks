@@ -18,27 +18,27 @@ export default function Home() {
   }
 
   return (
-  <div className="grid grid-cols-2 gap-5 m-5 items-center w-full h-full align-center justify-center">
-    <div className="flex flex-col items-start justify-center w-full h-full m-4 gap-4">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 p-4 sm:p-6 items-center w-full mx-auto max-w-7xl">
+    <div className="flex flex-col items-start justify-center w-full gap-4">
       <div className="flex flex-col items-center justify-center bg-[#BCC7DE] px-5 rounded-full">
-      <h1 className="font-mono text-2xl text-[#3E52E8]"> BEM-VINDO</h1>
+      <h1 className="font-mono text-xl sm:text-2xl text-[#3E52E8]"> BEM-VINDO</h1>
       </div>
-        <h2 className="text-[#111C2D] font-bold text-[3em] 2xl:text-[5em]">Organize sua rotina com simplicidade</h2>
-        <p className="text-[#3C475A] 2xl:text-[1.25em] font-light">ZivvuTasks ajuda você a transformar o caos em clareza. Gerencie seus projetos, acompanhe seu progresso e alcance seus objetivos com uma interface limpa e intuitiva.</p>
-        <div className="flex flex-row items-center gap-4">
-         <button onClick={navigateToBoard} className="bg-[#3E52E8] text-white p-3 rounded-xl hover:cursor-pointer shadow-[0_5px_15px_rgba(0,0,0,0.35)] hover:bg-[#2C3AB1] transition duration-300 flex flex-row items-center gap-2">
+        <h2 className="text-[#111C2D] font-bold text-[2rem] sm:text-[3em] 2xl:text-[5em] leading-tight">Organize sua rotina com simplicidade</h2>
+        <p className="text-[#3C475A] sm:text-[1.05em] 2xl:text-[1.25em] font-light">ZivvuTasks ajuda você a transformar o caos em clareza. Gerencie seus projetos, acompanhe seu progresso e alcance seus objetivos com uma interface limpa e intuitiva.</p>
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 w-full sm:w-auto">
+         <button onClick={navigateToBoard} className="bg-[#3E52E8] text-white p-3 rounded-xl hover:cursor-pointer shadow-[0_5px_15px_rgba(0,0,0,0.35)] hover:bg-[#2C3AB1] transition duration-300 flex flex-row items-center justify-center gap-2 w-full sm:w-auto">
             Ir para o Quadro <ChevronRight />
             </button>
-          <button onClick={() => route.navigate("/tutorial")} className="bg-[#FFFFFF] text-[#636363] border border-[#636363] p-3 rounded-xl shadow-[0_5px_15px_rgba(0,0,0,0.35)] hover:cursor-pointer hover:bg-[#2C3AB1] hover:text-white hover:border-transparent transition duration-300 ">
+          <button onClick={() => route.navigate("/tutorial")} className="bg-[#FFFFFF] text-[#636363] border border-[#636363] p-3 rounded-xl shadow-[0_5px_15px_rgba(0,0,0,0.35)] hover:cursor-pointer hover:bg-[#2C3AB1] hover:text-white hover:border-transparent transition duration-300 w-full sm:w-auto">
             Ver Tutorial
             </button>
         </div>
     </div>
-      <img src="assets/zivvuimg.png" alt="TaskFlow" className="w-[80%] h-[80%] ml-5 rounded-2xl shadow-[0_5px_15px_rgba(0,0,0,0.35)]"/>
+      <img src="assets/zivvuimg.png" alt="Ilustração da plataforma ZivvuTasks" className="w-full max-w-md lg:max-w-none h-auto mx-auto mt-2 lg:mt-0 lg:ml-5 rounded-2xl shadow-[0_5px_15px_rgba(0,0,0,0.35)]"/>
 
-      <div className="col-span-2 flex flex-row items-center justify-center w-full h-full m-4 gap-4">
-        <div className="flex flex-row items-center justify-center gap-4">
-        <div className="flex flex-col items-center justify-center w-[25em] h-full m-4 gap-4">
+      <div className="lg:col-span-2 flex flex-col items-center justify-center w-full gap-4 mt-6">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-4 w-full">
+        <div className="flex flex-col items-center justify-center w-full max-w-sm gap-4">
           <div className="flex flex-col items-center justify-center gap-4 bg-[#F5F5F5] p-1">
             <CircleUser size={128} className="text-[#3E52E8] bg-[#BCC7DE] rounded-xl p-1" />
             <h2 className="text-[#3C475A] font-bold text-[1em]">Daniel Camillo Silva</h2>
@@ -58,10 +58,10 @@ export default function Home() {
 
         </div>
 
-          <div className="flex flex-col items-start h-full m-4 gap-4">
+          <div className="flex flex-col items-start w-full gap-4">
             <h2 className="text-[#3C475A] text-[1.5em] font-bold">Por que ZivvuTasks?</h2>
-            <div className="grid grid-cols-2 gap-4 w-auto h-full">
-              <div className="flex flex-row items-center justify-center gap-4 p-[1em] bg-[#F5F5F5] rounded-xl shadow-[0_5px_15px_rgba(0,0,0,0.35)] w-[25em]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+              <div className="flex flex-row items-center justify-center gap-4 p-[1em] bg-[#F5F5F5] rounded-xl shadow-[0_5px_15px_rgba(0,0,0,0.35)] w-full">
                 <SquareKanban size={48} className="text-[#3E52E8] bg-[#BCC7DE] rounded-xl p-1" />
                 <div className="flex flex-col items-start justify-center">
                   <h3 className="text-[#3C475A] font-bold text-[1em]">Visualização Clara</h3>
@@ -69,7 +69,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex flex-row items-center justify-center gap-4 p-[1em] bg-[#F5F5F5] rounded-xl shadow-[0_5px_15px_rgba(0,0,0,0.35)] w-[25em]">
+              <div className="flex flex-row items-center justify-center gap-4 p-[1em] bg-[#F5F5F5] rounded-xl shadow-[0_5px_15px_rgba(0,0,0,0.35)] w-full">
                 <Clock size={48} className="text-[#3E52E8] bg-[#BCC7DE] rounded-xl p-1" />
                 <div className="flex flex-col items-start justify-center">
                   <h3 className="text-[#3C475A] font-bold text-[1em]">Gestão de Tempo</h3>
@@ -77,7 +77,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex flex-row items-center justify-center gap-4 p-[1em] bg-[#F5F5F5] rounded-xl shadow-[0_5px_15px_rgba(0,0,0,0.35)] w-[25em]">
+              <div className="flex flex-row items-center justify-center gap-4 p-[1em] bg-[#F5F5F5] rounded-xl shadow-[0_5px_15px_rgba(0,0,0,0.35)] w-full">
                 <TrendingUp size={48} width={62} className="text-[#A53D00] bg-[#FFDBCD] rounded-xl p-1" />
                 <div className="flex flex-col items-start justify-center">
                   <h3 className="text-[#3C475A] font-bold text-[1em]">Acompanhamento de Progresso</h3>
@@ -85,7 +85,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex flex-row items-center justify-center gap-4 p-[1em] bg-[#F5F5F5] rounded-xl shadow-[0_5px_15px_rgba(0,0,0,0.35)] w-[25em]">
+              <div className="flex flex-row items-center justify-center gap-4 p-[1em] bg-[#F5F5F5] rounded-xl shadow-[0_5px_15px_rgba(0,0,0,0.35)] w-full">
                 <UsersRound size={48} width={62} className="text-[#A53D00] bg-[#FFDBCD] rounded-xl p-1" />
                 <div className="flex flex-col items-start justify-center">
                   <h3 className="text-[#3C475A] font-bold text-[1em]">Colaboração Eficiente</h3>
